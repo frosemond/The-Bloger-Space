@@ -41,3 +41,6 @@ const signupFormHandler = async (e) => {
     }
 };
 
+$(".login-form").on("submit", loginFormHandler);
+
+$(".signup-form").on("submit", signupFormHandler);
