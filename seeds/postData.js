@@ -4,7 +4,7 @@ const postdata = [
     {
         title: '',
         content: '',
-        user: ''
+        // user: ''
     }
 ]
 
