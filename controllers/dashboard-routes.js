@@ -35,8 +35,8 @@ router.get('/', withAuth, (req, res) => {
                 loggedIn: true
             });
         });
-    .catch (err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    // .catch (err => {
+    //     console.log(err);
+    //     res.status(500).json(err);
+    // });
 });
