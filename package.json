@@ -30,8 +30,5 @@
     "jquery": "^3.6.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.25.4"
-  },
-  "devDependencies": {
-    "eslint": "^8.26.0"
   }
 }
