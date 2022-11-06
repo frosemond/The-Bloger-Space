@@ -1,6 +1,19 @@
-<section class ="card">
+{{!-- <section class ="card">
     <a href="/post/{{id}}">
     <header>{{title}}</header>
     <p>{{content}}</p>
     </a>
-</section>
+</section> --}}
+
+<div class="card">
+    <a href="/post/{{id}}"></a>
+  <div class="card-header">
+   {{title}}
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{content}}</p>
+      {{!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> --}}
+    </blockquote>
+  </div>
+</div>
