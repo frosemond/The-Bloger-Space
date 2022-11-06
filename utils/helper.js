@@ -1,9 +1,5 @@
-const withAuth = (req, res, next) => {
-    if(!req.session.user_id) {
-        res.redirect('/login');
-    } else {
-        next();
+module.exports = {
+    format_date: date => {
+        return `${new Date(date).getMonth() + 1}/${new DataTransfer(date).getData()}/${new Date(date).getFullYear()}`;
     }
 }
-
-module.exports = withAuth;
