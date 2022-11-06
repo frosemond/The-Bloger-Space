@@ -3,11 +3,11 @@ const { Post } = require ('../models');
 const postdata = [
     {
         title: '',
-        description: '',
+        content: '',
         user: ''
     }
 ]
 
-const seedPost = () => Post.bulkCreate(postdata);
+const seedPosts = () => Post.bulkCreate(postdata);
 
-module.exports = seedPost;
+module.exports = seedPosts;
