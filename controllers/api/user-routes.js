@@ -1,6 +1,6 @@
 const router = require ('express').Router();
-const { resourceUsage } = require('process');
-const { User } = require('../../models');
+// const { resourceUsage } = require('process');
+const { User, Post, Comment } = require('../../models');
 
 // new user signup
 router.post('/', async(req,res) => {
