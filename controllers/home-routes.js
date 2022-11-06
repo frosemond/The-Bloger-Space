@@ -41,7 +41,8 @@ router.get('/post/:id', async (req, res) => {
                         model: Comment,
                         attributes: [
                             'id',
-                            'comment_detail',
+                            'title',
+                            'content',
                         ],
                     },
                 ],
@@ -55,3 +56,28 @@ router.get('/post/:id', async (req, res) => {
     }
 });
 
+// GET a single comment by ID
+router.get('/comment/:id', async(req,res) => {
+    if (!req.session.loggedIn) {
+        res.redirect('/login');
+    } else {
+        try {
+            const dbCommentData = await Comment.findByPk(req.params.id, {
+                include: [
+                    {
+                        model: Comment,
+                        attributes: [
+                            'id',
+                            'comment_detail',
+                        ],
+                    },
+                ],
+            });
+            const comment = dbCommentData.get ({ plain: true });
+            res.render('comment', {comment, loggedIn: req.session.loggedIn});
+        } catch(err) {
+            console.log(err);
+            res.status(500).json(err);
+        }
+    }
+})
