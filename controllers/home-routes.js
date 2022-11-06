@@ -19,10 +19,7 @@ router.get('/', async (req, res) => {
         );
         console.log(req.session);
         console.log("req.sessionID", req.sessionID)
-        res.render('homepage', {
-            posts,
-            loggedIn: req.session.loggedIn,
-        });
+        res.render("homepage", { posts });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
