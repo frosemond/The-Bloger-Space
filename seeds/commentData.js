@@ -2,7 +2,7 @@ const { Comment } = require ('../models');
 
 const commentdata = [
     {
-        comment_detail: '',
+        comment_detail: 'I just learned about this in my class!',
     }
 ]
 
