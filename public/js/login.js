@@ -1,7 +1,7 @@
 const loginFormHandler = async (e) => {
     e.preventDefault();
 
-    const userName = $("#user-login").value.trim();
+    const userName = $("#username-login").value.trim();
     const password = $("#password-login").value.trim();
 
     if (userName && password) {
@@ -20,5 +20,5 @@ const loginFormHandler = async (e) => {
 };
 
 
-$(".login-form").on("submit", loginFormHandler);
+$("#login-form").on("submit", loginFormHandler);
 
