@@ -80,6 +80,7 @@ router.get('/comment/:id', async(req,res) => {
     }
 });
 
+// GET login
 router.get('/login', (req, res) => {
     if(req.session.loggedIn) {
         res.redirect('/');
@@ -88,6 +89,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// GET signup
 router.get('/signup', (req, res) => {
     res.render('signup')
 })

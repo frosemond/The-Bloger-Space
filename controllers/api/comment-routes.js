@@ -27,30 +27,30 @@ router.get('/', async (req, res) => {
     }
 });
 
-// get one comment by ID
-router.get('/comment/:id', async (req, res) => {
-    if(!req.session.loggedIn) {
-        res.redirect('/login');
-    } else {
-        try {
-            const dbCommentData = await Comment.findByPk(req.params.id, {
-                include: [
-                    {
-                        model: Comment,
-                        attributes: [
-                            'id',
-                            'comment_detail'
-                        ],
-                    },
-                ],
-            });
-            const comments = dbCommentData.get({ plain: true });
-            res.render('comments', {comments, loggedIn: req.session.loggedIn });
-        } catch(err) {
-            console.log(err);
-            res.status(500).json(err);
-        }
-    }
-});
+// // get one comment by ID
+// router.get('/comment/:id', async (req, res) => {
+//     if(!req.session.loggedIn) {
+//         res.redirect('/login');
+//     } else {
+//         try {
+//             const dbCommentData = await Comment.findByPk(req.params.id, {
+//                 include: [
+//                     {
+//                         model: Comment,
+//                         attributes: [
+//                             'id',
+//                             'comment_detail'
+//                         ],
+//                     },
+//                 ],
+//             });
+//             const comments = dbCommentData.get({ plain: true });
+//             res.render('comments', {comments, loggedIn: req.session.loggedIn });
+//         } catch(err) {
+//             console.log(err);
+//             res.status(500).json(err);
+//         }
+//     }
+// });
 
 module.exports = router;
