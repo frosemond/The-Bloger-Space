@@ -32,10 +32,10 @@ router.get('/', (req, res) => {
     })
         .then(dbPostData => 
             res.json(dbPostData.reverse()));
-         .catch (err => {
-        console.log(err);
-        res.status(500).json(err);
-    });
+    //      .catch (err => {
+    //     console.log(err);
+    //     res.status(500).json(err);
+    // });
 });
 
 module.exports = router;
